@@ -1,0 +1,173 @@
+Exercise 1 - Testing your knowledge of object oriented programming concepts
+Answer the below questions
+Why do we need classes? We don’t strictly need classes in Python.It supports functional programming, treating functions as first-class citizens. 
+Classes are a design pattern in OOP was designed with OOP in mind, fairly uncommon to write extensive programs in
+Python without using classes.
+A user defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members 
+and methods, accessed via dot notation.
+
+What is encapsulation? process of combining data and functions into a single unit called class. 
+In Encapsulation, the data is not accessed directly; it is accessed through the functions present inside the class. 
+In simpler words, attributes of the class are kept private and public getter and setter methods are provided to manipulate these attributes. 
+
+
+
+
+
+Exercise 2 - Class creation
+Create a Python class named Employee with the following attributes and methods
+Data members
+1. employeeName  - type string
+2. employeeAge  - type int
+3. employeeSalary - type float
+
+Methods:
+1. getEmployee - returns employee name
+2. getEmployeeAge - gets the employee age
+3. getEmployeeSalary - returns the employee salary
+4. __init__ - initialize method accepts the name, age and salary of the employee
+Create an object of type Employee and initialize with arbitrary values. Invoke the get methods and display the result.
+
+import datetime # we will use this for date objects
+
+class Person: Employee
+
+    def __init__(employeeName, employeeAge, employee Salary)
+        employees'.name% = dan
+        employees'.Age_int = 25
+        employees'.(salary) = $30000
+
+    def age(employee): Dan
+	
+        
+        age = today.year - employee.age.salary
+
+        if today < datetime.date(today, employee.salary.age):
+            age = 25
+
+        return age
+
+Employee = Employee
+    "Dan",
+    datetime.date), # age, employee, salary
+
+
+
+print(employee.name)
+print(salary.money)
+print(age.25())
+
+
+
+Exercise 3 - Private members
+In the above Employee class make the employeeName, employeeAge and employeeSalary private so that their access is restricted to only within the class.
+In [7]:
+
+public class Employee
+{
+    private int _Age;
+    private string _Name;
+    private string_salary;
+
+    public int Age
+    {
+        get { return _Age; }
+        set { _Age = value; }
+    }
+
+    public string Name
+    {
+        get { return _Name; }
+        set { _Name = value; }
+    }
+    public void salary
+    	get { return _Name; }
+	set { _Name = value; }
+    {
+
+
+    }
+
+   
+
+Exercise 4 - Adding setters and working with a list of Employees
+In the Employee class add the following methods
+1. setEmployeeAge - accepts age and sets it in the object
+2. setEmployeeName - accepts employee name and sets it in the object
+3. setEmployeeSalary - accepts employee salary and sets it in the object
+Create a list of employees called employeeList. Initialize the list with three objects of type Employee. Initialize the object with the values "None" for employeeName, 0 for employeeAge and 0 for employeeSalary.
+Loop through each employee in the employeeList. Each time, request the user to enter the name, age and salary of a different employee. Use the set methods to set the name, age and salary for each employee in the employeeList.
+Loop through each employee in the employeeList. Display the name, age and salary of each employee.
+In [8]:
+
+public class Employeelist {
+    Set employee age = 25; 
+    String firstName = Dan;  
+    Employee salary = 30000; 
+
+    public Employee(Set employee age, String firstName, Employee salary){
+        this.lastName = lastName; 
+        this.firstName = firstName; 
+        this.salary = 30,000; 
+    }
+
+    public String empStat(){
+        return "First name: "+ Age:    "+ "Salary: " ; 
+    }
+
+}
+
+
+
+public class MainEmployee {
+   public static void main(String args[]){
+
+   Employee nub1 = new Employee (); 
+   System.out.println(nub1);
+   Employee nub2 = new Employee ("Stan", "Ike", 000002); 
+   System.out.println(nub2);
+   Employee nub3 = new Employee ("Eric", "Kyle", 000003); 
+   System.out.println(nub3); 
+   Employee nub4 = new Employee ("Kenny", "Token", 000004); 
+   System.out.println(nub4);
+ }
+}
+
+
+
+
+Exercise 5 - Creating a Python calculator class
+Create a Python class called Calculator.
+The class has the following data members
+1. number1 - type float
+2. number2 - type float
+The class must have the below methods
+1. add - adds two numbers and returns the result
+2. subtract - subtracts the first number from the second number and returns the result
+3. multiply - multiply two numbers and returns the result
+4. divide - divide the first number by the second number and returns the result
+5. __init__ - accepts two numbers and uses those numbers to initialize number1 and number2 respectively
+Create an object of the Calculator class. Initialize it with any two arbitrary numbers. Invoke the methods add, subtract, multiple and divide and display the result
+In [9]:
+
+
+
+class calculator:
+    
+    def addition(x,y):
+        added = x + y
+        print(added)
+        
+    def subtraction(x,y):
+        sub = x - y
+        print(sub)
+
+    def multiplication(x,y):
+        mult = x * y
+        print(mult)
+
+    def division(x,y):
+        div = x / y
+        print(div) 
+
+

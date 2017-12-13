@@ -1,0 +1,230 @@
+Exercise 1 - Testing your knowledge of plots
+Answer the below questions
+What is the goal of data visualization?systems can greatly assists users with proper reasoning and decision making, with progress and is improving each day.
+Why is it critical to ensure that every bit of ink in a visualization contributes to the intended goal? benefits of is that allows us visual access to huge amounts of data easly digestible visuals, grphics are usually the simplest and at the same time, most powerful.
+What is the difference between a histogram and a barplot? Histogram plot quantitative data with ranges of the dat grouped into bins or intervals while barplot plot categorical data.
+Name four types of charts:
+-Bar charts
+-histograms
+-visualization
+-Matplot
+
+
+
+
+
+Exercise 2 - Line chart
+Consider the following dataset of the weights of 7 cars and their corresponding fuel consumption
+weight = [3170,3455,3222,3983,2441,2500,2390]
+fuel_consumption = [26,30,28,23,36,33,38]
+Create a line chart that plots the weight of cars against their fuel consumption.
+Comment on your findings. How does fuel consumption change as the weight of the car increases?
+Make sure to add labels and a title to your chart
+In [6]:
+
+
+
+
+
+Exercise 3 - Scatter Plot
+Consider the following dataset of the weights of individuals and the number of times they used the remote contorl in a period of one hour
+weight = [121,127,128,131,130,131,133,141,161,167,169,171,173,175,177,181]
+remote_use = [4,3,7,5,3,8,3,4,22,21,17,23,19,22,18,23]
+Create a scatterplot with the weight on the y-axis and the remote_use variable on the x_axis.
+What can you conclude from the weight the points are distributed on the graph? Does a particular pattern standout?
+Make sure to add labels and a title to your chart
+In [7]:
+
+
+
+
+
+Exercise 4 - Bar Charts
+Consider the following dataset that show the excuses for being late in class and the number of times the excuse was used.
+excuse = ['No clean pants to wear','thought it was Saturday','forgot to set alarm','too dark, thought it was night','stuck in traffic']
+frequency_of_use = [12,8,26,5,14]
+Create a bar chart with the excuse on the y axis and the frequency of use on the x axis. Make sure the add labels and a title to the chart.
+In [1]:
+
+
+
+
+
+Exercise 5 - Creating subplots
+Consider the below data that shows the relationship between scores obtained and hours spent studying a week.
+hours = [1,2,3,4,5,6,7,8,9,10]
+score = [40,45,50,55,60,65,70,80,90,100]
+Create 4 subplots in a 2x2 grid, consisting of below four plots
+Histogram of scores.
+Line chart plotting hours on the x_axis and the score on the y_axis
+Bar chart plotting the hours on the x_axis and the score on the y_axis
+A scatter plot with the hours on the x_axis and the score on the y_axis
+Make sure to add labels and a title to each of the charts.
+In [9]:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from simple_library import multiplyAll 
+print multiplyAll([1,2,3,4,5])
+120
+In [3]:
+print addAll([1,2,3,4,5])
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-3-1db4da1f6089> in <module>()
+----> 1 print addAll([1,2,3,4,5])
+
+NameError: name 'addAll' is not defined
+In [5]:
+import simple_library
+
+print simple_library.addAll([1,2,3,4,5])
+15
+In [7]:
+import os
+
+print os.getcwd()
+
+os.chdir("/Desktop")
+/Users/sdorai000/Desktop/Personal/School/Sanjay/SJCC/cis24c/fall2017classwork/week8
+---------------------------------------------------------------------------
+OSError                                   Traceback (most recent call last)
+<ipython-input-7-8312c303f28e> in <module>()
+      3 print os.getcwd()
+      4 
+----> 5 os.chdir("/Desktop")
+
+OSError: [Errno 2] No such file or directory: '/Desktop'
+In [8]:
+import glob
+glob.glob('*.py')
+Out[8]:
+['simple_library.py']
+In [10]:
+import sys
+
+print sys.argv
+['/Library/Python/2.7/site-packages/ipykernel/__main__.py', '-f', '/Users/sdorai000/Library/Jupyter/runtime/kernel-db980571-1e87-4603-aa1e-09b6b306ce32.json']
+In [12]:
+import re
+
+print re.findall(r'\bj[a-z]*','jack and jill went up the hill')
+
+re.sub(r'(\b[a-z]+) \1',r'\1','cat in the the hat')
+['jack', 'jill']
+Out[12]:
+'cat in the hat'
+In [13]:
+import math
+
+math.log(1024,2)
+Out[13]:
+10.0
+In [25]:
+import random
+
+print random.choice([1,2,3])
+
+print random.sample(range(100),10)
+
+print random.random()
+
+print random.randint(1,10)
+2
+[90, 82, 32, 47, 89, 61, 93, 59, 28, 88]
+0.787291668153
+4
+In [3]:
+import urllib2
+from bs4 import BeautifulSoup
+
+htmldoc = ""
+for line in urllib2.urlopen('http://google.com'):
+    htmldoc += line
+    
+soup = BeautifulSoup(htmldoc,'html.parser')
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-3-62cbc527b300> in <module>()
+      1 import urllib2
+----> 2 from bs4 import BeautifulSoup
+      3 
+      4 htmldoc = ""
+      5 for line in urllib2.urlopen('http://google.com'):
+
+ImportError: No module named bs4
+In [28]:
+from datetime import date
+now = date.today()
+
+print now
+2017-10-26
+In [29]:
+now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
+Out[29]:
+'10-26-17. 26 Oct 2017 is a Thursday on the 26 day of October.'
+In [30]:
+?now.strftime
+In [35]:
+import zlib
+
+s = "jack and jill went up the hill to fetch a pail of water. jack fell down and broke his crown and jill come tumbling after"
+
+print len(s)
+
+t = zlib.compress(s)
+
+print len(t)
+print t
+
+print zlib.decompress(t)
+120
+91
+???
+ 4??1I?_H;?'????w??????????1%?????L*?
+jack and jill went up the hill to fetch a pail of water. jack fell down and broke his crown and jill come tumbling after
+In [5]:
+import bs4
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-5-2ab5f7ff4a9e> in <module>()
+----> 1 import bs4
+
+ImportError: No module named bs4
+In [ ]:

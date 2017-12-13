@@ -1,0 +1,232 @@
+Exercise 1 - Testing your knowledge of files
+Answer the below questions
+In your own words, describe what a file is?
+A file is an object on a computer that stores data, information, settings, or commands used with a computer program. In a graphical user interface such as Microsoft Windows, files display as icons that relate to the program that opens the file.
+
+Why is it important to close a file after we are done using it? 
+
+It can slow down your program. Too many things open, and more used space in the RAM, will impact performance.
+For the most part, many changes to files in python do not go into effect until after the file is closed, so if your script edits, leaves open,
+and reads a file, it won't see the edits, 
+run in to limits of how many files you can have open.
+
+
+Exercise 2 - Write to a file
+Write a python program to write the below lines to a file
+Name, Age, Gender, Profession
+Harry, 23, Male, Software Engineer
+Sam, 25, Male, Lawyer
+Lisa, 29, Female, Computer Scientist
+Mary, 22, Female, Doctor
+Below are a set of recommended steps to accomplish this
+open a file in write mode. This will return a handle to the file
+use the write method to write each line to the file using the file handle returned in the open call
+close the file when done
+Once done, go to the folder where the file is and open it to make sure that this is written.
+Refer to class exercises especially "In [22]" in https://github.com/cis024c/fall2017classwork/blob/master/week5/working_with_files.ipynb
+In [9]:
+
+def get_ids_for_age_intervall(start_age, end_age, ages):
+       "get indexes for members in a given age intervall"
+    ids = []
+    for i, age in  enumerate(ages):
+        if (start_age<=age) and (age<=end_age):
+            ids.append(i)
+    return ids
+
+name, age = read_info()
+name, age = sort_info_by_age(name, age)
+
+groups = [(Harry,23), (Sam,25), (Lisa, 29), (Mary,22)]
+
+
+    #go trough age groups and write to file
+    for start_age, end_age in groups:
+        ids = get_ids_for_age_intervall(start_age, end_age, age)
+        if ids:
+            f.write("\n%i-%i\n" % (start_age, e
+
+# Writing to a file
+writeFile = open("user_names.txt","w")
+
+writeFile.write("Harry\23")
+writeFile.write("Sam\25")
+writeFile.write("Lisa\29")
+writefile.write("Mary\22")
+
+writeFile.close()
+
+readFile = open("user_names.txt")
+print readFile.read()
+
+# Open the file
+movieFile = open("ml-latest-small/movies.csv")
+
+# Initialize an empty genre dictionary
+genreCountDictionary = {}
+
+
+Exercise 3 - Reading from a file
+Read and display the data from the file you had just written to.
+Below are a set of recommended steps to accomplish this
+open the file in read mode. This will return a handle to the file.
+You can now iterate through each line in the file and then use readline to read each line.
+Display each line as you read it in
+Note that you can also use the read method to read in all lines or the readlines method to read all lines into a list.
+In [18]:
+
+def read_info():
+     "Read info file"
+    with open("info.txt", "r") as f:
+        name, age = [], []
+        for line in f.readlines():
+            n, a  = line.strip().split(' ')
+            name.append(n)
+            age.append(int(a))
+    return name, age
+
+def sort_info_by_age(name, age):
+    sorted_ids = sorted(range(len(age)), key=lambda k: float(age[k]))
+    new_name = [name[i] for i in sorted_ids ]
+    new_age = [age[i] for i in sorted_ids ]
+    return new_name, new_age
+
+def get_ids_for_age_intervall(start_age, end_age, ages):
+    """get indexes for members in a given age intervall"""
+    ids = []
+    for i, age in  enumerate(ages):
+        if (start_age<=age) and (age<=end_age):
+            ids.append(i)
+    return ids
+
+name, age = read_info()
+name, age = sort_info_by_age(name, age)
+
+groups = [(Harry,23), (Sam,25), (Lisa, 29), (Mary,22)]
+
+ END CODE
+Exercise 4 - Finding the average age of users in a file
+Write a python program to find the average age of users in the file you just created.
+Below are a set of recommended steps to accomplish this
+Open the file in read mode
+Read in each line of the file
+Split each line in the file to get the age
+Find the average age and display it
+In [19]:
+
+
+class Student :
+    def __init__(self, age):
+        self._student.age = age
+        self._marks = []
+    
+     Converts the student to a string .
+      return The string representation .
+    
+
+     Sets the student's Age.
+    
+    def setStudentAge(self, age):
+        self._studentage = age
+
+    
+     Gets the student's Age
+      return the student's Age
+    
+    def getStudentAge(self, newAge):
+        return self._newAge
+
+    
+     Appends a mark to the marks list
+    
+    def addMark(self, mark):
+        self._marks.append(mark)
+
+    def __repr__(self) :
+         Build a string starting with the student Age
+         followed by the details of each person age.
+      s = "Student Age :" + self._studentAge + " "
+        if len(self._marks) == 0 :
+            s += " <none \n>"
+        else :
+            for mark in self._marks :
+                s += " Course Module: " + mark.getModule() + " Raw Mark: " + str(mark.getRawMark())
+
+        return s
+
+    
+     Method to calculate the students average age
+    
+    def calculateAverageAge(self):
+        totalMarks = 0
+        count = 0
+        for mark in self._marks :
+            if mark == 0 :
+                count = count
+            else :
+                count = count + 1
+
+            totalMarks = totalMarks + mark
+            average = totalMarks / count
+
+        return average
+
+
+
+Exercise 5 - Appending to a file
+Write a python program to append information provided by users to an existing file.
+You will need to ask the user to enter their name, age, gender and profession using the raw_input method (for Python 3 users, you will use the input method).
+open the file you just created in the above exercies in append mode and write this information to the file.
+Remember to make sure that the information you append is entered in the same format where each field is separated by commas.
+In [20]:
+
+class Student :
+    def_init_(name, age):
+	User._name:
+        self._Age = 
+        self._gender =
+	self._profession = 
+    
+     Converts the student to a string .
+      return The string representation .
+    
+
+     Sets the student's Age.
+      param newAge is the students.age.
+    
+    def setStudentAge(Name, Age):
+        self._studentage = 25 
+
+    
+     Gets the student's gender.
+      return the student's gender.
+    
+    def getStudentAge(gender, profession):
+        return self._name
+
+    
+     Appends a mark to the marks list
+    
+    def addMark(name, age):
+        self._marks.append(mark)
+
+    def __repr__(self) :
+         Build a string starting with the student ID
+         followed by the details of each mark .
+        s.age = "Student Name :" + self._studentId + "  "
+        if len(self._marks) == 0 :
+            s += " <none \n>"
+
+if __name__== "__main__":
+  main()
+
+print("Student.name.age.gender.profession")
+
+
+
+
+
+
+
+
+
